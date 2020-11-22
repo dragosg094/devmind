@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="task1"
+          class="tema.Task"
+          scope="prototype"
+          init-method="generateId">
+    </bean>
+    <bean id="task2"
+          class="tema.Task"
+          init-method="generateId"
+          destroy-method="performDestruction">
+
+    </bean>
+</beans>
