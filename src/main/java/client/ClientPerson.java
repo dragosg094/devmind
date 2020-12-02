@@ -1,7 +1,10 @@
 package client;
 
 import dto.AccountDTO;
+import dto.DebitBankAccountDTO;
 import lombok.Getter;
+
+import java.util.List;
 
 public class ClientPerson extends Client{
 
@@ -13,8 +16,8 @@ public class ClientPerson extends Client{
     private final String CNP;
     private AccountDTO account;
 
-    public ClientPerson( String username, String password , String uniqueId,String flag, String CNP,String nume, String prenume) {
-        super(username,password, uniqueId, flag);
+    public ClientPerson(long id, String username, String password , String uniqueId,String flag, String CNP,String nume, String prenume) {
+        super(id,username,password, uniqueId, flag);
         this.nume = nume;
         this.prenume = prenume;
         this.CNP = CNP;
@@ -23,5 +26,10 @@ public class ClientPerson extends Client{
     @Override
     public void setAccount(AccountDTO account) {
         this.account = account;
+    }
+
+    @Override
+    public List<AccountDTO> getAccounts() {
+        return null;
     }
 }

@@ -1,18 +1,26 @@
 package controllers;
 
 import client.Client;
-import client.ClientJuridicPerson;
-import client.ClientPerson;
+import dto.AccountDTO;
+import service.AdminService;
 
 public class AdminController {
 
-    private Client client;
+    private AdminService adminService = new AdminService();
 
-    public Client createNewClient(){
-
+    public AdminController(AdminService adminService) {
+        this.adminService = adminService;
     }
-    public void createNewAccount(Client client){
 
+    public void createNewClient(Client client) {
+        adminService.createNewClient(client);
+    }
+
+    public AccountDTO createNewDebitBankAccount(Client client) {
+        return adminService.createNewDebitBankAccount(client);
+    }
+    public AccountDTO createNewCreditBankAccount(Client client) {
+        return adminService.createNewCreditBankAccount(client);
     }
 
 }
