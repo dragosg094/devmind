@@ -1,6 +1,5 @@
 package controllers;
 
-import cache.TransactionCache;
 import dto.DebitBankAccountDTO;
 import dto.AccountDTO;
 import dto.Transaction;
@@ -24,13 +23,13 @@ public class ClientController {
         return this.clientService.returnAmount(debitBankAccountDTO);
     }
 
-    public void transferAmountByIban(String iban, Double amount){
+    public void transferAmountByIban(long iban, Double amount){
         this.clientService.transferAmountByIban(iban,amount);
     }
     public void transferAmountToAccount(AccountDTO accountDTO, Double amount){
         this.clientService.transferAmountToAccount(accountDTO, amount);
     }
-    public TransactionCache showAllTransactions(){
+    public List<Transaction> showAllTransactions(){
        return this.clientService.showAllTransactions();
     }
 }

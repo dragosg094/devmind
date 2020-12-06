@@ -16,11 +16,11 @@ public class AdminController {
         adminService.createNewClient(client);
     }
 
-    public AccountDTO createNewDebitBankAccount(Client client) {
-        return adminService.createNewDebitBankAccount(client);
+    public AccountDTO createNewDebitBankAccount(Client client,Double amount) {
+        return adminService.createNewDebitBankAccount(client, amount);
     }
-    public AccountDTO createNewCreditBankAccount(Client client) {
-        return adminService.createNewCreditBankAccount(client);
+    public AccountDTO createNewCreditBankAccount(Client client,Double amount, Double limitAmount) {
+        return adminService.createNewCreditBankAccount(client, amount, limitAmount);
     }
 
 }

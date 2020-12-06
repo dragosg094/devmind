@@ -1,24 +1,56 @@
 package cache;
 
 import client.Client;
-import dto.Transaction;
-
+import java.util.ArrayList;
 import java.util.List;
 
-public class ClientCache extends Cache{
+public class ClientCache {
 
-    @Override
-    public boolean isLogged(Client client) {
+    private static final List<Client> clientList = new ArrayList<>();
+
+    public void addClient(Client client){
+        for(Client c : clientList){
+            if(client.getUsername().equals(c.getUsername())){
+                System.out.println("The username already exists!");
+            }
+        }
+                clientList.add(client);
+                System.out.println("Client with username "+ client.getUsername()+ " was added successfully!");
+    }
+
+    public void removeClient(Client client){
+        for(Client c: clientList){
+            if(client.getUsername().equals(c.getUsername())){
+                clientList.remove(c);
+                System.out.println("The client was successfully removed from the list!");
+            }
+        }
+        System.out.println("The client was not in the list!");
+
+    }
+
+    public boolean isClient(String username){
+        for (Client c: clientList){
+            if (c.getUsername().equals(username)){
+                return true;
+            }
+        }
+        System.out.println("The client was not in the list!");
         return false;
     }
-
-    @Override
-    public void addTransaction(Transaction newCreditTransaction) {
-
+    public Client getClientByUsername(String username){
+        for (Client c: clientList){
+            if (c.getUsername().equals(username)){
+                return c;
+            }
+        }
+        System.out.println("The client was not in the list!");
+        return null;
     }
 
-    @Override
     public List<Client> getAllClients() {
-        return null;
+        System.out.println("Number of clients: " + this.clientList.size());
+        return clientList;
+
     }
 }

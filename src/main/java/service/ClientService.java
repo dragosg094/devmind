@@ -10,15 +10,14 @@ import java.util.List;
 
 public class ClientService {
     private AccountService accountService;
-    private ClientCache clientCache;
+    private TransactionCache transactionCache;
 
 
-    public ClientService(AccountService accountService, ClientCache clientCache) {
+    public ClientService(AccountService accountService, TransactionCache transactionCache) {
 
         this.accountService = accountService;
-        this.clientCache = clientCache;
+        this.transactionCache = transactionCache;
     }
-
 
 
     public double returnAmount(DebitBankAccountDTO debitBankAccountDTO) {
@@ -26,18 +25,19 @@ public class ClientService {
     }
 
     public List<AccountDTO> returnAccount(String userName) {
-       return null;
+        return null;
     }
 
-    public void transferAmountByIban(String iban, Double amount) {
-    accountService.transferAmountByIban(iban, amount);
+    public void transferAmountByIban(long iban, Double amount) {
+
+        accountService.transferAmountByIban(iban, amount);
     }
 
     public void transferAmountToAccount(AccountDTO accountDTO, Double amount) {
         accountService.transferAmountToAccount(accountDTO, amount);
     }
 
-    public TransactionCache showAllTransactions() {
-        return null;
+    public List<Transaction> showAllTransactions() {
+        return transactionCache.getAllTransactions();
     }
 }

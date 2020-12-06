@@ -1,25 +1,20 @@
 package service;
 
-import cache.ClientCache;
+import cache.AccountsCache;
 import cache.TransactionCache;
-import client.Client;
 import dto.AccountDTO;
-import dto.DebitBankAccountDTO;
 import dto.Transaction;
 
-import java.util.List;
 
 public class AccountService {
 
-    private ClientCache clientCache;
     private TransactionCache transactionCache;
-    private List<Client> allClients;
     private Transaction transaction;
+    private AccountsCache cache;
 
-    public AccountService(ClientCache clientCache, TransactionCache transactionCache) {
-        this.clientCache = clientCache;
+    public AccountService(AccountsCache cache, TransactionCache transactionCache) {
+        this.cache = cache;
         this.transactionCache = transactionCache;
-        this.allClients = clientCache.getAllClients();
     }
 
     public Transaction creditAccount(AccountDTO accountDTO, Double amount) {
@@ -33,26 +28,23 @@ public class AccountService {
         return transaction;
     }
 
-    public AccountDTO getAccountByIban(String iban) {
-        for (Client currentClient : allClients) {
-            List<AccountDTO> allAccountsOfCurrentClient = currentClient.getAccounts();
-            for (AccountDTO currentAccount : allAccountsOfCurrentClient) {
-                if (currentAccount.getIban() == iban) {
-                    return currentAccount;
-                }
-            }
-        }
+    public AccountDTO getAccountByIban(long iban) {
+        cache.addAllAccounts();
+       for(AccountDTO account : cache.getAccountsList()){
+           if(account.getIban() == iban){
+               addTransactionToRepository(account);
+               return account;
+           }
+       }
         return null;
     }
 
-    public void transferAmountByIban(String iban, Double amount) {
-        for(Client currentClient : allClients){
-            List<AccountDTO> allAccountsOfCurrentClient = currentClient.getAccounts();
-            for (AccountDTO currentAccount : allAccountsOfCurrentClient) {
-                if (currentAccount.getIban() == iban) {
-                   currentAccount.increaseAmount(amount);
-                    addTransactionToRepository(currentAccount);
-                }
+    public void transferAmountByIban(long iban, Double amount) {
+        cache.addAllAccounts();
+        for(AccountDTO account : cache.getAccountsList()){
+            if(account.getIban() == iban){
+                account.increaseAmount(amount);
+                addTransactionToRepository(account);
             }
         }
     }

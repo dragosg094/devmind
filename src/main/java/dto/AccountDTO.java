@@ -1,13 +1,15 @@
 package dto;
 
+import client.Client;
 import lombok.Data;
+
 
 @Data
 public abstract class AccountDTO {
     private long id;
     private Double amount;
     private String ownerID;
-    private String iban;
+    private Long iban;
 
     public AccountDTO(long id, Double amount, String ownerID) {
         this.id = id;
@@ -16,7 +18,5 @@ public abstract class AccountDTO {
     }
 
     public abstract void increaseAmount(Double amount);
-
-    public abstract long getBankAccountID();
-
+    public abstract void addAccount(Client client);
 }

@@ -1,10 +1,22 @@
 package cache;
 
 import client.Client;
+import dto.Transaction;
 
-public class TransactionCache extends Cache {
-    @Override
-    public boolean isLogged(Client client) {
-        return false;
+import java.util.ArrayList;
+import java.util.List;
+
+public class TransactionCache {
+
+    public static final List<Transaction> transactionList = new ArrayList<>();
+
+    public void addTransaction(Transaction transaction) {
+        transactionList.add(transaction);
+    }
+
+
+    public List<Transaction> getAllTransactions() {
+        System.out.println("The number of transactions are: "+ transactionList.size());
+        return transactionList;
     }
 }

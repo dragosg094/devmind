@@ -22,10 +22,11 @@ public class LoginController {
     }
 
     public void loginClient() {
-        loginService.loginClient(client);
+        loginService.checkClient(client);
     }
 
     public void loginAdmin() {
-        loginService.loginAdmin(client);
+
+        loginService.checkAdmin(client);
     }
 }

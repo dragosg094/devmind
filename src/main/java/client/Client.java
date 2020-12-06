@@ -15,6 +15,8 @@ public abstract class  Client {
     private final String flag;
     private long id;
 
+
+
     public Client( long id,String username, String password,String uniqueId,String flag) {
         this.id = id;
         this.username = username;
@@ -23,7 +25,7 @@ public abstract class  Client {
         this.flag=flag;
     }
 
+
     public abstract void setAccount(AccountDTO account);
 
-    public abstract List<AccountDTO> getAccounts();
 }

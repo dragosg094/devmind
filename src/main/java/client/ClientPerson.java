@@ -28,8 +28,4 @@ public class ClientPerson extends Client{
         this.account = account;
     }
 
-    @Override
-    public List<AccountDTO> getAccounts() {
-        return null;
-    }
 }
