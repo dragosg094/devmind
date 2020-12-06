@@ -49,5 +49,15 @@ public class CreditBankAccountDTO extends AccountDTO {
             throw new InsufficientFundsException();
         }
     }
+
+    @Override
+    public String toString() {
+        return "CreditBankAccountDTO{" +
+                "limitAmount=" + limitAmount +
+                ", random=" + random +
+                ", iban=" + iban +
+                ", accountsCache=" + accountsCache +
+                '}';
+    }
 }
 

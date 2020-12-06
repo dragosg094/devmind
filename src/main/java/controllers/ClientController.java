@@ -15,7 +15,7 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    public List<AccountDTO> getAllAccounts(String userName){
+    public AccountDTO getAllAccounts(String userName){
         return this.clientService.returnAccount(userName);
     }
 
