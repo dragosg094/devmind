@@ -1,7 +1,7 @@
-package controllers;
+package project.controllers;
 
-import client.Client;
-import service.LoginService;
+import project.client.Client;
+import project.service.LoginService;
 
 public class LoginController {
 

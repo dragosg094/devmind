@@ -1,6 +1,6 @@
-package dto;
+package project.dto;
 
-import client.Client;
+import project.client.Client;
 import lombok.Data;
 
 

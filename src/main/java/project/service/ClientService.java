@@ -1,12 +1,12 @@
-package service;
+package project.service;
 
-import cache.AccountsCache;
-import cache.ClientCache;
-import cache.TransactionCache;
-import client.Client;
-import dto.DebitBankAccountDTO;
-import dto.AccountDTO;
-import dto.Transaction;
+import project.cache.AccountsCache;
+import project.cache.ClientCache;
+import project.cache.TransactionCache;
+import project.client.Client;
+import project.dto.AccountDTO;
+import project.dto.DebitBankAccountDTO;
+import project.dto.Transaction;
 
 import java.util.List;
 

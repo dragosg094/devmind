@@ -1,8 +1,8 @@
-package service;
+package project.service;
 
-import cache.ClientCache;
-import client.Client;
-import customExceptions.WrongPasswordException;
+import project.cache.ClientCache;
+import project.client.Client;
+import project.customExceptions.WrongPasswordException;
 
 
 public class LoginService {

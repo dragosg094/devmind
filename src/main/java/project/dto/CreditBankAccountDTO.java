@@ -1,15 +1,11 @@
-package dto;
+package project.dto;
 
 
-import cache.AccountsCache;
-import client.Client;
-import customExceptions.InsufficientFundsException;
+import project.cache.AccountsCache;
+import project.client.Client;
+import project.customExceptions.InsufficientFundsException;
 import lombok.Getter;
-import org.iban4j.CountryCode;
-import org.iban4j.Iban;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class CreditBankAccountDTO extends AccountDTO {

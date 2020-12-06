@@ -1,4 +1,4 @@
-package customExceptions;
+package project.customExceptions;
 
 public class InsufficientFundsException extends RuntimeException {
 }

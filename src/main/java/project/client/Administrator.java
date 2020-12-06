@@ -1,7 +1,7 @@
-package client;
+package project.client;
 
 
-import dto.AccountDTO;
+import project.dto.AccountDTO;
 
 public class Administrator extends Client {
 

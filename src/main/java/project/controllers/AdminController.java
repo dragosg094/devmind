@@ -1,8 +1,9 @@
-package controllers;
+package project.controllers;
 
 
-import client.Client;
-import service.AdminService;
+import project.client.Client;
+import project.dto.AccountDTO;
+import project.service.AdminService;
 
 public class AdminController {
 
@@ -16,7 +17,7 @@ public class AdminController {
         adminService.createNewClient(client);
     }
 
-    public AccountDTO createNewDebitBankAccount(Client client,Double amount) {
+    public AccountDTO createNewDebitBankAccount(Client client, Double amount) {
         return adminService.createNewDebitBankAccount(client, amount);
     }
     public AccountDTO createNewCreditBankAccount(Client client,Double amount, Double limitAmount) {

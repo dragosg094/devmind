@@ -1,8 +1,8 @@
-package dto;
+package project.dto;
 
 
-import cache.AccountsCache;
-import client.Client;
+import project.cache.AccountsCache;
+import project.client.Client;
 
 import java.util.Random;
 

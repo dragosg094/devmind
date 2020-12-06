@@ -1,6 +1,7 @@
-package cache;
+package project.cache;
 
-import client.Client;
+import project.client.Client;
+
 import java.util.ArrayList;
 import java.util.List;
 

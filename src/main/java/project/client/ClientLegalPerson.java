@@ -1,10 +1,7 @@
-package client;
+package project.client;
 
-import dto.AccountDTO;
-import dto.DebitBankAccountDTO;
+import project.dto.AccountDTO;
 import lombok.Getter;
-
-import java.util.List;
 
 
 public class ClientLegalPerson extends Client {

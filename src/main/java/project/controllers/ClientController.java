@@ -1,10 +1,10 @@
-package controllers;
+package project.controllers;
 
-import dto.DebitBankAccountDTO;
-import dto.AccountDTO;
-import dto.Transaction;
-import service.AccountService;
-import service.ClientService;
+import project.dto.AccountDTO;
+import project.dto.DebitBankAccountDTO;
+import project.dto.Transaction;
+import project.service.AccountService;
+import project.service.ClientService;
 
 import java.util.List;
 

@@ -1,18 +1,18 @@
-package config;
+package project.config;
 
-import cache.AccountsCache;
-import cache.TransactionCache;
-import controllers.AdminController;
-import controllers.ClientController;
+import project.cache.AccountsCache;
+import project.cache.TransactionCache;
+import project.controllers.ClientController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import service.AccountService;
-import service.AdminService;
-import service.ClientService;
+import project.controllers.AdminController;
+import project.service.AccountService;
+import project.service.AdminService;
+import project.service.ClientService;
 
 @Configuration
-@ComponentScan()
+@ComponentScan("project")
 public class Config {
 
     @Bean

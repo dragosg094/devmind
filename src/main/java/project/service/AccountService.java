@@ -1,9 +1,9 @@
-package service;
+package project.service;
 
-import cache.AccountsCache;
-import cache.TransactionCache;
-import dto.AccountDTO;
-import dto.Transaction;
+import project.cache.AccountsCache;
+import project.cache.TransactionCache;
+import project.dto.AccountDTO;
+import project.dto.Transaction;
 
 
 public class AccountService {

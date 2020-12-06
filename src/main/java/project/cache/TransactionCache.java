@@ -1,7 +1,6 @@
-package cache;
+package project.cache;
 
-import client.Client;
-import dto.Transaction;
+import project.dto.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;

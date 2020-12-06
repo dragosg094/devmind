@@ -1,9 +1,9 @@
-package service;
+package project.service;
 
-import client.Client;
-import dto.AccountDTO;
-import dto.CreditBankAccountDTO;
-import dto.DebitBankAccountDTO;
+import project.client.Client;
+import project.dto.AccountDTO;
+import project.dto.CreditBankAccountDTO;
+import project.dto.DebitBankAccountDTO;
 
 public class AdminService {
     private Client client;
